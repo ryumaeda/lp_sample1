@@ -11,19 +11,19 @@ const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div className={`min-h-screen bg-white ${notoSansJP.className}`}>
-      {/* Header */}
+      {/* ヘッダー */}
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-emerald-100">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-2">
               <span className="text-2xl font-bold text-emerald-800">
-                moscom
+                Sample
               </span>
             </div>
 
             <div className="hidden lg:flex items-center gap-8">
               <nav className="flex gap-6">
-                {["ホーム", "品質", "サービス", "会社概要", "お問い合わせ"].map(
+                {["トップ", "クオリティ", "事業内容", "企業情報", "連絡先"].map(
                   (item) => (
                     <a
                       key={item}
@@ -57,31 +57,31 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* メインビジュアル */}
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-emerald-50 via-white to-emerald-100">
         <div className="container mx-auto">
           <div className="relative rounded-3xl overflow-hidden bg-emerald-800 p-12 text-white shadow-2xl">
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                次世代へ、この美しい
+                未来の世代のために
                 <br />
-                <span className="text-emerald-300">環境を残す</span>
+                <span className="text-emerald-300">自然を守る</span>
               </h1>
               <p className="text-xl md:text-2xl text-emerald-100 mb-8 font-light">
-                それがモスコムの最大の取り組みです
+                私たちの使命はここにあります
               </p>
               <Button
                 size="lg"
                 className="bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg"
               >
-                詳しく見る
+                もっと知る
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
             <div className="absolute right-0 top-0 w-1/2 h-full">
               <Image
                 src="/images/hero-environment.jpg"
-                alt="美しい自然環境"
+                alt="豊かな自然"
                 fill
                 className="object-cover object-center"
                 priority
@@ -91,38 +91,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* News Section */}
+      {/* ニュース */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-emerald-800">
-            最新のトピックス
+            お知らせ
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                date: "2021.10.04",
-                title: "品質マネジメントシステム ISO9001の認証を取得",
+                date: "2019.11.12",
+                title: "ISO9001品質マネジメントシステム認証取得",
                 description:
-                  "お客様により高品質なサービスを提供するため、国際規格の認証を取得しました。",
+                  "サービス品質向上のため、国際規格の認証を取得いたしました。",
               },
               {
-                date: "2021.10.04",
-                title: "環境マネジメントシステム ISO14001の認証を取得",
+                date: "2018.11.04",
+                title: "ISO14001環境マネジメントシステム認証取得",
                 description:
-                  "環境に配慮した事業活動を推進するため、国際規格の認証を取得しました。",
+                  "環境保全への取り組みとして、国際規格の認証を取得いたしました。",
               },
               {
-                date: "2021.10.04",
-                title:
-                  "情報セキュリティーマネジメントシステム ISO27001の認証を取得",
+                date: "2017.3.04",
+                title: "ISO27001情報セキュリティマネジメントシステム認証取得",
                 description:
-                  "お客様の大切な情報を守るため、情報セキュリティの国際規格認証を取得しました。",
+                  "情報管理体制の強化のため、情報セキュリティの国際規格認証を取得いたしました。",
               },
               {
-                date: "2018.09.01",
-                title: "資本金 5,000万円に増資",
+                date: "2016.09.01",
+                title: "増資のお知らせ",
                 description:
-                  "事業拡大に伴い、さらなるサービス向上と安定した経営基盤の構築を目指します。",
+                  "事業規模拡大に伴い、資本金を9,000万円に増資いたしました。",
               },
             ].map((news, index) => (
               <NewsCard key={index} {...news} />
@@ -131,30 +130,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* 事業内容 */}
       <section className="py-20 px-4 bg-gradient-to-b from-emerald-50 to-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-emerald-800">
-            私たちのサービス
+            事業内容
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "オフィスクリーニング",
+                title: "ビルメンテナンス",
                 description:
-                  "プロフェッショナルな清掃サービスで、快適なワークスペースを実現します。",
+                  "プロフェッショナルによる清掃で、理想的な職場環境を創造します。",
                 image: "/images/office-cleaning.jpg",
               },
               {
-                title: "環境に優しい洗剤",
+                title: "エコ洗剤の使用",
                 description:
-                  "地球に優しい洗剤を使用し、環境負荷を最小限に抑えます。",
+                  "環境に配慮した洗剤を採用し、地球環境への負担を最小限に抑えます。",
                 image: "/images/eco-friendly-cleaning.jpg",
               },
               {
-                title: "24時間サポート",
+                title: "年中無休対応",
                 description:
-                  "緊急時にも対応可能な24時間体制のサポートを提供しています。",
+                  "24時間365日、お客様のニーズに迅速に対応いたします。",
                 image: "/images/24-hour-support.jpg",
               },
             ].map((service, index) => (
@@ -164,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* 企業情報 */}
       <section className="py-20 px-4 bg-emerald-800 text-white relative">
         <Image
           src="/images/about-background.jpg"
@@ -174,33 +173,33 @@ export default function Home() {
         />
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">モスコムについて</h2>
+            <h2 className="text-3xl font-bold mb-8">企業理念</h2>
             <p className="text-emerald-100 leading-relaxed mb-12 text-lg">
-              オフィスビルから一般家庭まで、長年築いてきた管理・清掃ノウハウを活かし、
-              これからも『お客様の期待120%の働く良き求人』を続けて参ります。
-              さらに、『人や地球にとって、安心』をモットーに使用する資材、洗剤等においても
-              こだわり抜いております。これこそが、モスコムの目指すホスピタリティーです。
+              商業施設から住宅まで、培ってきた専門技術とノウハウを活用し、
+              常に『期待以上のサービス』を提供し続けます。
+              また、『人と環境にやさしい』という理念のもと、使用する製品や資材にも
+              徹底的にこだわっています。これが私たちの考えるサービス品質です。
             </p>
             <Button
               variant="outline"
               size="lg"
               className="text-black border-white hover:bg-emerald-700"
             >
-              会社概要を見る
+              企業情報を見る
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* フッター */}
       <footer className="bg-emerald-900 text-emerald-50 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold">moscom</span>
+              <span className="text-2xl font-bold">Sample</span>
             </div>
             <nav className="flex flex-wrap justify-center gap-8">
-              {["ホーム", "品質", "サービス", "会社概要", "お問い合わせ"].map(
+              {["トップ", "クオリティ", "事業内容", "企業情報", "連絡先"].map(
                 (item) => (
                   <a
                     key={item}
@@ -214,7 +213,7 @@ export default function Home() {
             </nav>
           </div>
           <div className="mt-8 pt-8 border-t border-emerald-800 text-center text-emerald-400 text-sm">
-            © 2024 Ryu. All rights reserved.
+            © 2024 Sample. All rights reserved.
           </div>
         </div>
       </footer>
